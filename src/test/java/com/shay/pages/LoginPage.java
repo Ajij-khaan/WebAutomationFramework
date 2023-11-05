@@ -95,11 +95,6 @@ public class LoginPage {
 		} catch (Exception e) {
 			failedCase("Username is not located. Please check error message", "Username Faield12");
 		}
-		
-		
-		
-		
-		
 	}
 	
 }
