@@ -2,24 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-31T18:26:21Z" name="Default suite" finished-at="2023-10-31T18:26:32Z" duration-ms="10807">
+  <suite started-at="2023-11-05T08:27:09Z" name="Default suite" finished-at="2023-11-05T08:27:23Z" duration-ms="13632">
     <groups>
     </groups>
-    <test started-at="2023-10-31T18:26:21Z" name="Default test" finished-at="2023-10-31T18:26:32Z" duration-ms="10807">
+    <test started-at="2023-11-05T08:27:09Z" name="Default test" finished-at="2023-11-05T08:27:23Z" duration-ms="13632">
       <class name="com.shay.tests.LoginTest">
-        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.shay.tests.LoginTest@225129c]" started-at="2023-11-01T00:26:17Z" name="startBrowser" finished-at="2023-11-01T00:26:21Z" duration-ms="4381" status="PASS">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.shay.tests.LoginTest@68df9280]" started-at="2023-11-05T14:27:06Z" name="startBrowser" finished-at="2023-11-05T14:27:09Z" duration-ms="3071" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startBrowser -->
-        <test-method is-config="true" signature="start()[pri:0, instance:com.shay.tests.LoginTest@225129c]" started-at="2023-11-01T00:26:21Z" name="start" finished-at="2023-11-01T00:26:27Z" duration-ms="5426" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.shay.tests.LoginTest@68df9280]" started-at="2023-11-05T14:27:09Z" name="start" finished-at="2023-11-05T14:27:16Z" duration-ms="7442" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method signature="loginTest()[pri:0, instance:com.shay.tests.LoginTest@225129c]" started-at="2023-11-01T00:26:27Z" name="loginTest" finished-at="2023-11-01T00:26:32Z" duration-ms="5354" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.shay.tests.LoginTest@68df9280]" started-at="2023-11-05T14:27:16Z" name="loginTest" finished-at="2023-11-05T14:27:22Z" duration-ms="5674" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.shay.tests.LoginTest@225129c]" started-at="2023-11-01T00:26:32Z" name="stopBrowser" finished-at="2023-11-01T00:26:32Z" duration-ms="265" status="PASS">
+        <test-method is-config="true" signature="report()[pri:0, instance:com.shay.tests.LoginTest@68df9280]" started-at="2023-11-05T14:27:22Z" name="report" finished-at="2023-11-05T14:27:23Z" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.shay.tests.LoginTest@68df9280]" started-at="2023-11-05T14:27:23Z" name="stopBrowser" finished-at="2023-11-05T14:27:23Z" duration-ms="216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->

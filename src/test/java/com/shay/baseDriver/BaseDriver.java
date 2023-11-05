@@ -26,13 +26,16 @@ WebDriver driver;
 		}
 		else if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();	
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
 		}
 		else {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();	
+			driver.manage().window().maximize();
 		}
 		
+		//setting broswer driver to pageDriver calss.
 		PageDriver.getInstance().setDriver(driver);
 	}
 	
