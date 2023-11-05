@@ -70,31 +70,35 @@ public class LoginPage {
 			if(userName.isDisplayed()) {
 				userName.sendKeys("Admin");
 				passedCase("Username Entered");
+				
+				try {
+					if(password.isDisplayed()) {
+						password.sendKeys("admin123");
+						passedCase("Password Entered");
+
+						try {
+							test.info("Click the login button");
+							if(loginButton.isDisplayed()) {
+								loginButton.click();
+								Thread.sleep(5000);
+								
+								passedCaseWithSc("Login Successfull", "Login Success");
+							}
+						} catch (Exception e) {
+							failedCase("Login Button is not located. Please check error message", "Login Faield");
+						}
+					}
+				} catch (Exception e) {
+					failedCase("Password is not located. Please check error message", "Password Faield");
+				}
 			}
 		} catch (Exception e) {
 			failedCase("Username is not located. Please check error message", "Username Faield12");
 		}
 		
-		try {
-			if(password.isDisplayed()) {
-				password.sendKeys("admin123");
-				passedCase("Password Entered");
-			}
-		} catch (Exception e) {
-			failedCase("Password is not located. Please check error message", "Password Faield");
-		}
 		
-		try {
-			test.info("Click the login button");
-			if(loginButton.isDisplayed()) {
-				loginButton.click();
-				Thread.sleep(5000);
-				
-				passedCaseWithSc("Login Successfull", "Login Success");
-			}
-		} catch (Exception e) {
-			failedCase("Login Button is not located. Please check error message", "Login Faield");
-		}
+		
+		
 		
 	}
 	

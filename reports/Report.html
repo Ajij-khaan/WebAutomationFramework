@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Sample Extent Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 5, 2023 02:27:16 PM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 5, 2023 03:31:49 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('device-view')">
@@ -76,7 +81,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -96,25 +101,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author="QATEAM"
           tag=""
           device="Windows">
           <div class="test-detail">
             <p class="name"><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p></p>
             <p class="text-sm">
-              <span>2:27:16 PM</span> / <span>00:00:05:685</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>3:31:49 PM</span> / <span>00:00:00:517</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass"><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p></h5>
-<span class='badge badge-success'>11.05.2023 2:27:16 PM</span>
-<span class='badge badge-danger'>11.05.2023 2:27:22 PM</span>
-<span class='badge badge-default'>00:00:05:685</span>
+<h5 class="test-status text-fail"><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p></h5>
+<span class='badge badge-success'>11.05.2023 3:31:49 PM</span>
+<span class='badge badge-danger'>11.05.2023 3:31:50 PM</span>
+<span class='badge badge-default'>00:00:00:517</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -128,8 +133,8 @@
         <div class="card-header">
           <div class="card-toolbar node-info">
             <ul class="list-inline d-none d-sm-block">
-              <li><span class="badge pass-bg log ">Pass</span></li>
-              <li><span class='badge badge-default'>00:05:667</span></li>
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>00:00:489</span></li>
               <li><span><i class="fa fa-paperclip"></i></span></li>
             </ul>
           </div>
@@ -140,7 +145,7 @@
 <span class="badge badge-pill badge-default">Windows</span>            </div>
           </div>
         </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
             
 <table class="table table-sm">
@@ -148,46 +153,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>2:27:16 PM</td>
+        <td>3:31:49 PM</td>
         <td>
           Enter username
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:27:17 PM</td>
+        <td>3:31:49 PM</td>
         <td>
           <p style="color:#85BC63; font-size:13px"><b>+Username Entered+</b></p>
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:27:17 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:31:50 PM</td>
         <td>
-          <p style="color:#85BC63; font-size:13px"><b>+Password Entered+</b></p>
+          <p style="color:#FF5353; font-size:13px"><b>+Password is not located. Please check error message+</b></p>
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>2:27:17 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:31:50 PM</td>
         <td>
-          Click the login button
+          <textarea readonly class="code-block">java.lang.InterruptedException: Exception
+	at com.shay.pages.LoginPage.failedCase(LoginPage.java:46)
+	at com.shay.pages.LoginPage.login(LoginPage.java:92)
+	at com.shay.tests.LoginTest.loginTest(LoginTest.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:27:22 PM</td>
-        <td>
-          <p style="color:#85BC63; font-size:13px"><b>+Login Successfull+</b></p>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:27:22 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:31:50 PM</td>
         <td>
           
     <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\Shay\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\WebAutomationFramework\screenshots\Login Success.png' src="C:\Users\Shay\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\WebAutomationFramework\screenshots\Login Success.png">
+<img data-featherlight='C:\Users\Shay\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\WebAutomationFramework\screenshots\Password Faield.png' src="C:\Users\Shay\Documents\workspace-spring-tool-suite-4-4.20.0.RELEASE\WebAutomationFramework\screenshots\Password Faield.png">
     
     </div></div>
         </td>
@@ -210,10 +238,10 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view device-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
 <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
@@ -221,15 +249,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">Windows</p>
+<p class="name">java.lang.InterruptedException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>Windows</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>java.lang.InterruptedException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -240,9 +268,61 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:27:16 PM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:31:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'><p style="color:#3E96E7; font-size:20px"><b>LOGIN</b></p></a>
+<div class="">
+<span class="badge badge-default"><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p>.<p style="color:#3E96E7; font-size:20px"><b>LOGIN</b></p></span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view device-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">Windows</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Windows</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:31:49 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p></a>
 </td>
@@ -270,7 +350,7 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">QATEAM</p>
 <p class="duration text-sm">1 tests</p>
@@ -278,7 +358,7 @@
 <div class="test-contents d-none">
 <div class="info">
 <h4>QATEAM</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -289,9 +369,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:27:16 PM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:31:49 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'><p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p></a>
 </td>
@@ -313,25 +393,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 5, 2023 02:27:16 PM</h3>
+<h3>Nov 5, 2023 03:31:49 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 5, 2023 02:27:22 PM</h3>
+<h3>Nov 5, 2023 03:31:50 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -347,12 +427,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -370,9 +450,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> steps passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='100%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -390,10 +470,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='66%'><b>4</b> events passed</small></div>
+<div><small data-tooltip='20%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>2</b> others
+<small data-tooltip='60%'><b>3</b> events failed,
+<b data-tooltip='%'>1</b> others
 </small>
 </div>
 </div>
@@ -409,7 +489,7 @@
 </div></div>
 <script>
 var timeline = {
-"<p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p>":5.685
+"<p style="color:#FF6000; font-size:20px"><b>ORANGE HRM LOGIN</b></p>":0.517
 };
 </script>
 <div class="row">
@@ -421,11 +501,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>QATEAM</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -439,11 +519,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>Windows</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -454,13 +534,13 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
@@ -471,11 +551,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 4,
-failEvents: 0,
+passEvents: 1,
+failEvents: 3,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 2
+infoEvents: 1
 };
 </script>        </div>
       </div>
